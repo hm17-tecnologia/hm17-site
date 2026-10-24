@@ -160,6 +160,21 @@
   .steps strong{display:block;font:700 17px Montserrat,sans-serif;color:#fff;margin-bottom:6px}
   .steps span{font-size:14.5px;color:var(--muted)}
 
+  /* Portfólio */
+  #portfolio{padding-top:40px}
+  .works{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+  .work{position:relative;border:1px solid var(--line);border-radius:24px;padding:32px;background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.01));overflow:hidden;transition:border-color .25s,transform .25s}
+  .work::before{content:"";position:absolute;top:0;left:32px;right:32px;height:1px;background:linear-gradient(90deg,transparent,rgba(124,180,255,.6),rgba(244,179,138,.5),transparent);opacity:.6}
+  .work:hover{border-color:rgba(124,180,255,.4);transform:translateY(-4px)}
+  .w-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px}
+  .w-ic{width:48px;height:48px;border-radius:14px;background:linear-gradient(160deg,rgba(244,179,138,.22),rgba(244,179,138,.05));border:1px solid rgba(244,179,138,.25);color:var(--beige);display:flex;align-items:center;justify-content:center}
+  .w-tag{font:700 11.5px Montserrat,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line-2);border-radius:999px;padding:6px 12px}
+  .work h3{font-size:21px;font-weight:700;margin-bottom:10px}
+  .work p{margin:0 0 20px;color:var(--muted);font-size:15.5px}
+  .w-chips{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+  .w-chips li{font-size:12.5px;color:#C9D4E3;background:rgba(59,130,246,.1);border:1px solid rgba(124,180,255,.2);border-radius:999px;padding:5px 11px}
+  @media (max-width:760px){.works{grid-template-columns:1fr}.work{padding:26px}}
+
   /* Sobre */
   #sobre{background:linear-gradient(180deg,transparent,rgba(29,78,216,.08) 30%,rgba(29,78,216,.08) 70%,transparent)}
   .about{display:grid;grid-template-columns:.85fr 1.15fr;gap:64px;align-items:center}
@@ -239,6 +254,7 @@
     <nav class="menu" id="menu" aria-label="Principal">
       <a href="#produtos">Produtos</a>
       <a href="#servicos">Serviços</a>
+      <a href="#portfolio">Portfólio</a>
       <a href="#sobre">Sobre</a>
       <a class="btn btn-primary" href="#contato">Fale conosco</a>
     </nav>
@@ -372,6 +388,42 @@
         <div><b>02</b><strong>Construção</strong><span>Entregas curtas, validadas com quem usa.</span></div>
         <div><b>03</b><strong>Operação</strong><span>Colocamos no ar e acompanhamos de perto.</span></div>
         <div><b>04</b><strong>Evolução</strong><span>Melhoria contínua guiada por dados.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="portfolio">
+    <div class="wrap">
+      <div class="head rv">
+        <div class="eyebrow">Portfólio</div>
+        <h2>Projetos que já <span class="grad">entregamos</span></h2>
+        <p>Soluções sob medida em áreas diferentes, sempre com o mesmo cuidado: entender a operação e automatizar o que dá trabalho.</p>
+      </div>
+      <div class="works">
+        <article class="work rv">
+          <div class="w-top"><span class="w-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span><span class="w-tag">Seguros</span></div>
+          <h3>Plataforma de vendas para corretora de seguros</h3>
+          <p>Assistente de vendas no WhatsApp com vitrine de planos, cotação e envio de proposta integrados à seguradora, e CRM com fila de prioridade e funil de conversão.</p>
+          <ul class="w-chips"><li>Bot de vendas</li><li>Integração com seguradora</li><li>CRM e funil</li></ul>
+        </article>
+        <article class="work rv d1">
+          <div class="w-top"><span class="w-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M8 11h6M11 8v6"/></svg></span><span class="w-tag">Prospecção</span></div>
+          <h3>Captação de clientes por região e atividade</h3>
+          <p>Levantamento de empresas por atividade (CNAE) e região a partir de dados públicos, com priorização e campanhas de abordagem para gerar novos clientes.</p>
+          <ul class="w-chips"><li>Dados públicos de CNPJ</li><li>Segmentação por região</li><li>Campanhas de abordagem</li></ul>
+        </article>
+        <article class="work rv">
+          <div class="w-top"><span class="w-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 18v-6a9 9 0 0118 0v6"/><path d="M21 19a2 2 0 01-2 2h-1v-6h3zM3 19a2 2 0 002 2h1v-6H3z"/></svg></span><span class="w-tag">Atendimento</span></div>
+          <h3>Dimensionador de equipes de atendimento</h3>
+          <p>Calcula a equipe necessária por volume, tempo médio de atendimento e nível de serviço, para voz e canais digitais, com cenários de operação normal e de pico.</p>
+          <ul class="w-chips"><li>Erlang e carga de trabalho</li><li>Cenários de pico</li><li>Voz e digital</li></ul>
+        </article>
+        <article class="work rv d1">
+          <div class="w-top"><span class="w-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4M8 14h3M8 17h6"/></svg></span><span class="w-tag">Recursos humanos</span></div>
+          <h3>Gestão de benefícios VR e VT</h3>
+          <p>Cálculo automático de vale-refeição e vale-transporte por escala, feriados e faltas, com perfis de acesso por coordenador e importação de planilhas.</p>
+          <ul class="w-chips"><li>Cálculo por escala</li><li>Importação de planilhas</li><li>Perfis e permissões</li></ul>
+        </article>
       </div>
     </div>
   </section>
