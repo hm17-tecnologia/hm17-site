@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HM17 Tecnologia e Serviços</title>
+<meta name="description" content="A HM17 cria, desenvolve e opera produtos digitais que transformam negócios e geram oportunidades reais para pessoas. Criadora do OrderFlow.">
+<meta property="og:title" content="HM17 Tecnologia e Serviços">
+<meta property="og:description" content="Ideias de hoje. Oportunidades para amanhã.">
+<meta property="og:image" content="https://hm17.com.br/assets/hm17-icone-azul-512.png">
+<meta property="og:url" content="https://hm17.com.br/">
+<meta name="theme-color" content="#0A2540">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0A2540; --navy-2:#04111D; --blue:#2563EB; --blue-d:#1D4ED8; --beige:#F4B38A;
+    --ink:#1F2937; --muted:#5B6574; --line:#E5E7EB; --soft:#F5F7FA; --white:#fff;
+    --r:18px; --max:1120px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:Inter,system-ui,sans-serif;color:var(--ink);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:Montserrat,system-ui,sans-serif;color:var(--navy);line-height:1.12;margin:0;letter-spacing:-.01em}
+  a{color:inherit}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+  .eyebrow{font-family:Montserrat,sans-serif;font-size:12.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--blue)}
+  .btn{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:0 22px;border-radius:12px;font:600 15px/1 Montserrat,sans-serif;text-decoration:none;transition:background .15s,transform .15s}
+  .btn-primary{background:var(--blue);color:#fff}.btn-primary:hover{background:var(--blue-d)}
+  .btn-ghost{border:1.5px solid var(--line);color:var(--navy);background:#fff}.btn-ghost:hover{border-color:var(--blue)}
+  .btn:focus-visible,a:focus-visible{outline:3px solid var(--beige);outline-offset:3px}
+
+  /* Topo */
+  header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid transparent;transition:border-color .2s}
+  header.scrolled{border-color:var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:72px;gap:16px}
+  .brand img{height:40px;display:block}
+  .menu{display:flex;align-items:center;gap:28px}
+  .menu a{font:600 14.5px Montserrat,sans-serif;color:var(--navy);text-decoration:none}
+  .menu a:not(.btn):hover{color:var(--blue)}
+  .menu .btn{min-height:42px;padding:0 18px;font-size:14px}
+  .burger{display:none;width:44px;height:44px;border:1px solid var(--line);border-radius:10px;background:#fff;align-items:center;justify-content:center;cursor:pointer}
+
+  /* Abertura */
+  .hero{padding:72px 0 88px;background:radial-gradient(900px 420px at 92% 10%,rgba(37,99,235,.10),transparent 60%),radial-gradient(600px 300px at 0% 100%,rgba(244,179,138,.16),transparent 60%)}
+  .hero .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+  .hero h1{font-size:clamp(36px,5.2vw,60px);font-weight:800;margin:14px 0 20px}
+  .hero h1 span{color:var(--blue)}
+  .hero p.lead{font-size:18px;color:var(--muted);max-width:520px;margin:0 0 30px}
+  .hero .ctas{display:flex;gap:12px;flex-wrap:wrap}
+  .art{position:relative;aspect-ratio:1/1;border-radius:32px;background:linear-gradient(160deg,var(--navy),var(--navy-2));display:flex;align-items:center;justify-content:center;overflow:hidden;box-shadow:0 30px 60px -30px rgba(10,37,64,.55)}
+  .art::before{content:"";position:absolute;inset:auto -20% -40% auto;width:80%;height:80%;border-radius:50%;background:radial-gradient(circle,rgba(244,179,138,.35),transparent 65%)}
+  .art::after{content:"";position:absolute;inset:-30% auto auto -20%;width:70%;height:70%;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.45),transparent 65%)}
+  .art img{position:relative;width:58%;filter:drop-shadow(0 18px 30px rgba(0,0,0,.35))}
+  .art .tag{position:absolute;left:24px;bottom:22px;right:24px;color:#C9D2DE;font:600 12px Montserrat,sans-serif;letter-spacing:.2em;text-transform:uppercase;text-align:center}
+
+  section{padding:88px 0}
+  .head{max-width:640px;margin-bottom:44px}
+  .head h2{font-size:clamp(28px,3.6vw,40px);font-weight:800;margin:10px 0 12px}
+  .head p{color:var(--muted);font-size:17px;margin:0}
+
+  /* Produtos */
+  #produtos{background:var(--soft)}
+  .product{display:grid;grid-template-columns:1fr 1fr;gap:0;background:#fff;border:1px solid var(--line);border-radius:24px;overflow:hidden}
+  .product .info{padding:40px}
+  .product .logo{height:60px;margin-bottom:18px;border-radius:12px;display:block}
+  .product h3{font-size:26px;font-weight:800;margin-bottom:10px}
+  .product p{color:var(--muted);margin:0 0 18px}
+  .checks{list-style:none;padding:0;margin:0 0 26px;display:grid;gap:10px}
+  .checks li{display:flex;gap:10px;align-items:flex-start;font-size:15.5px}
+  .checks li::before{content:"";flex-shrink:0;width:20px;height:20px;margin-top:2px;border-radius:50%;background:var(--blue) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5L20 7'/%3E%3C/svg%3E") center/12px no-repeat}
+  .product .visual{background:linear-gradient(150deg,#FFF4EC,#FDE6D6);display:flex;align-items:center;justify-content:center;padding:40px}
+  .phone{width:220px;border-radius:30px;background:#1B1714;padding:10px;box-shadow:0 30px 50px -25px rgba(0,0,0,.45)}
+  .phone .scr{border-radius:22px;background:#fff;overflow:hidden}
+  .phone .top{background:#9B2C2C;color:#fff;padding:18px 14px 14px;text-align:center;font:700 14px Montserrat,sans-serif}
+  .phone .top small{display:block;font:500 10.5px Inter,sans-serif;opacity:.85;margin-top:4px}
+  .phone .row{display:flex;justify-content:space-between;gap:8px;padding:10px 12px;border-bottom:1px solid #F1EEED;font-size:11.5px}
+  .phone .row b{color:#9B2C2C}
+  .phone .pay{margin:12px;border-radius:10px;background:#1F6B45;color:#fff;text-align:center;font:700 11.5px Montserrat,sans-serif;padding:10px}
+  .soon{margin-top:20px;display:flex;align-items:center;gap:14px;padding:18px 22px;border:1.5px dashed #CBD5E1;border-radius:16px;color:var(--muted);font-size:15px}
+  .soon b{color:var(--navy)}
+
+  /* Serviços */
+  .cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+  .card{border:1px solid var(--line);border-radius:var(--r);padding:28px;background:#fff;transition:border-color .2s,transform .2s}
+  .card:hover{border-color:#BFD0F8;transform:translateY(-2px)}
+  .card .ic{width:48px;height:48px;border-radius:14px;background:#EEF3FE;color:var(--blue);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+  .card h3{font-size:19px;font-weight:700;margin-bottom:8px}
+  .card p{margin:0;color:var(--muted);font-size:15.5px}
+
+  /* Sobre */
+  #sobre{background:linear-gradient(160deg,var(--navy),var(--navy-2));color:#D7DEE8}
+  #sobre h2{color:#fff}
+  #sobre .eyebrow{color:var(--beige)}
+  .about{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:center}
+  .about img{width:100%;max-width:340px;display:block;margin:0 auto}
+  .about p{font-size:17px;margin:0 0 16px}
+  .values{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:28px}
+  .values div{border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:16px}
+  .values b{display:block;color:#fff;font-family:Montserrat,sans-serif;font-size:15px;margin-bottom:4px}
+  .values span{font-size:14px;color:#AEB9C8}
+
+  /* Contato */
+  .contact{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:stretch}
+  .contact .box{border:1px solid var(--line);border-radius:var(--r);padding:32px}
+  .contact h3{font-size:20px;font-weight:700;margin-bottom:10px}
+  .contact p{color:var(--muted);margin:0 0 20px}
+  .contact dl{margin:0;display:grid;gap:12px}
+  .contact dt{font:700 12px Montserrat,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+  .contact dd{margin:2px 0 0;font-size:15.5px}
+
+  footer{border-top:1px solid var(--line);padding:32px 0;font-size:13.5px;color:var(--muted)}
+  footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
+  footer a{text-decoration:none}footer a:hover{color:var(--blue)}
+
+  @media (max-width:900px){
+    .hero .grid,.product,.about,.contact{grid-template-columns:1fr}
+    .art{max-width:420px;margin:0 auto;width:100%}
+    .cards{grid-template-columns:1fr}
+    .values{grid-template-columns:1fr}
+    .product .info{padding:28px}
+    .about img{max-width:220px}
+  }
+  @media (max-width:760px){
+    .burger{display:inline-flex}
+    .menu{display:none;position:absolute;top:72px;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:#fff;border-bottom:1px solid var(--line);padding:8px 20px 18px}
+    .menu.open{display:flex}
+    .menu a:not(.btn){padding:14px 0;border-bottom:1px solid var(--line)}
+    .menu .btn{margin-top:14px;justify-content:center}
+    .hero{padding:44px 0 64px}
+    section{padding:64px 0}
+  }
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header id="top">
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="HM17 Tecnologia e Serviços, início"><img src="assets/hm17-simbolo.svg" alt="HM17 Tecnologia e Serviços"></a>
+    <button class="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0A2540" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <nav class="menu" id="menu" aria-label="Principal">
+      <a href="#produtos">Produtos</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#sobre">Sobre</a>
+      <a class="btn btn-primary" href="#contato">Fale conosco</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="wrap grid">
+      <div>
+        <div class="eyebrow">HM17 Tecnologia e Serviços</div>
+        <h1>Tecnologia para um futuro com mais <span>oportunidades.</span></h1>
+        <p class="lead">A HM17 cria, desenvolve e opera produtos digitais que transformam negócios e geram oportunidades reais para pessoas.</p>
+        <div class="ctas">
+          <a class="btn btn-primary" href="#produtos">Conheça nossos produtos <span aria-hidden="true">→</span></a>
+          <a class="btn btn-ghost" href="#contato">Fale conosco</a>
+        </div>
+      </div>
+      <div class="art" aria-hidden="true">
+        <img src="assets/hm17-simbolo-claro.svg" alt="">
+        <div class="tag">Ideias de hoje. Oportunidades para amanhã.</div>
+      </div>
+    </div>
+  </div>
+
+  <section id="produtos">
+    <div class="wrap">
+      <div class="head">
+        <div class="eyebrow">Produtos</div>
+        <h2>Produtos próprios, feitos para o dia a dia de quem empreende</h2>
+        <p>Desenvolvemos e operamos nossos produtos de ponta a ponta: tecnologia, suporte e evolução contínua.</p>
+      </div>
+      <article class="product">
+        <div class="info">
+          <img class="logo" src="assets/orderflow-logo.webp" alt="OrderFlow">
+          <h3>Pedidos online sem comissão</h3>
+          <p>Cardápio digital e gestão de pedidos para delivery e retirada, com a marca do próprio negócio.</p>
+          <ul class="checks">
+            <li>O cliente pede pelo celular e já paga online</li>
+            <li>Pedido organizado no painel, pronto para preparar</li>
+            <li>Relatórios e assistente com IA para decidir melhor</li>
+            <li>Mensalidade fixa, sem porcentagem sobre as vendas</li>
+          </ul>
+          <a class="btn btn-primary" href="https://orderflow.tec.br" target="_blank" rel="noopener">Conhecer o OrderFlow <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="visual" aria-hidden="true">
+          <div class="phone"><div class="scr">
+            <div class="top">Seu Negócio<small>Aberto agora · Entrega 35–45 min</small></div>
+            <div class="row"><span>Combo da casa</span><b>R$ 39,90</b></div>
+            <div class="row"><span>Pizza grande</span><b>R$ 54,90</b></div>
+            <div class="row"><span>Açaí 500 ml</span><b>R$ 22,00</b></div>
+            <div class="row"><span>Refrigerante lata</span><b>R$ 6,00</b></div>
+            <div class="pay">Pagamento aprovado ✓</div>
+          </div></div>
+        </div>
+      </article>
+      <div class="soon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span><b>Novos produtos em desenvolvimento.</b> Quer saber primeiro? Fale com a gente.</span></div>
+    </div>
+  </section>
+
+  <section id="servicos">
+    <div class="wrap">
+      <div class="head">
+        <div class="eyebrow">Serviços</div>
+        <h2>Software sob encomenda para o seu negócio</h2>
+        <p>Do diagnóstico à operação: entendemos o processo, construímos a solução e acompanhamos o resultado.</p>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg></div>
+          <h3>Sistemas web</h3>
+          <p>Plataformas, painéis e portais sob medida, rápidos e seguros, prontos para crescer com a operação.</p>
+        </div>
+        <div class="card">
+          <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h4l3-8 4 16 3-8h2"/></svg></div>
+          <h3>Automação e integrações</h3>
+          <p>Conectamos sistemas, pagamentos e canais de atendimento para eliminar retrabalho e tarefas manuais.</p>
+        </div>
+        <div class="card">
+          <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div>
+          <h3>Dados e inteligência</h3>
+          <p>Indicadores, relatórios e inteligência artificial aplicada para transformar dados em decisão.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="sobre">
+    <div class="wrap about">
+      <img src="assets/hm17-logo-claro.svg" alt="HM17 Tecnologia e Serviços">
+      <div>
+        <div class="eyebrow">Sobre a HM17</div>
+        <h2 style="font-size:clamp(28px,3.6vw,40px);font-weight:800;margin:10px 0 18px">Tecnologia com propósito</h2>
+        <p>A HM17 une tecnologia, negócios e um propósito pessoal. Nossa marca nasceu de uma família: as figuras que formam o “M” representam conexão, cuidado, crescimento e novas oportunidades.</p>
+        <p>É assim que trabalhamos: perto de quem usa, com soluções simples para problemas reais e compromisso com o longo prazo.</p>
+        <div class="values">
+          <div><b>Confiança</b><span>Transparência e segurança em cada entrega.</span></div>
+          <div><b>Inovação</b><span>Tecnologia atual aplicada ao que importa.</span></div>
+          <div><b>Proximidade</b><span>Atendimento de gente para gente.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato">
+    <div class="wrap">
+      <div class="head">
+        <div class="eyebrow">Contato</div>
+        <h2>Vamos conversar?</h2>
+        <p>Conte o que você precisa. Respondemos em até 1 dia útil.</p>
+      </div>
+      <div class="contact">
+        <div class="box">
+          <h3>Fale com a HM17</h3>
+          <p>Projetos sob encomenda, parcerias e informações institucionais.</p>
+          <a class="btn btn-primary" href="mailto:contato@hm17.com.br?subject=Contato%20pelo%20site">contato@hm17.com.br</a>
+        </div>
+        <div class="box">
+          <dl>
+            <div><dt>Razão social</dt><dd>HM17 Desenvolvimento de Software sob Encomenda LTDA</dd></div>
+            <div><dt>CNPJ</dt><dd>69.363.914/0001-13</dd></div>
+            <div><dt>Endereço</dt><dd>Rua Pais Leme, 215, conj. 1713, Pinheiros, São Paulo/SP, 05424-150</dd></div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap row">
+    <span>© <span id="ano">2026</span> HM17 Tecnologia e Serviços · CNPJ 69.363.914/0001-13</span>
+    <span><a href="privacidade.html">Política de privacidade</a> · <a href="https://orderflow.tec.br" target="_blank" rel="noopener">OrderFlow</a></span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('ano').textContent = new Date().getFullYear()
+  const h = document.querySelector('header'), b = document.querySelector('.burger'), m = document.getElementById('menu')
+  addEventListener('scroll', () => h.classList.toggle('scrolled', scrollY > 8), { passive: true })
+  b.addEventListener('click', () => { const o = m.classList.toggle('open'); b.setAttribute('aria-expanded', o) })
+  m.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { m.classList.remove('open'); b.setAttribute('aria-expanded', false) }))
+</script>
+</body>
+</html>
