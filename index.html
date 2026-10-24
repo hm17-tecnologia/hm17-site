@@ -175,6 +175,27 @@
   .w-chips li{font-size:12.5px;color:#C9D4E3;background:rgba(59,130,246,.1);border:1px solid rgba(124,180,255,.2);border-radius:999px;padding:5px 11px}
   @media (max-width:760px){.works{grid-template-columns:1fr}.work{padding:26px}}
 
+  /* Onde ajudamos */
+  #ajuda{padding-bottom:30px}
+  .pains{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+  .pain{position:relative;padding:30px;border-radius:22px;border:1px solid var(--line);background:rgba(255,255,255,.02)}
+  .pain .n{display:block;font:900 44px/1 Montserrat,sans-serif;background:linear-gradient(180deg,rgba(124,180,255,.55),rgba(124,180,255,0));-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:14px}
+  .pain h3{font-size:19px;font-weight:700;margin-bottom:10px}
+  .pain p{margin:0;color:var(--muted);font-size:15.5px}
+  /* FAQ */
+  .faq-wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:48px;align-items:start}
+  .faq{display:grid;gap:12px}
+  .faq details{border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.025);transition:border-color .2s}
+  .faq details[open]{border-color:rgba(124,180,255,.35)}
+  .faq summary{cursor:pointer;list-style:none;padding:20px 56px 20px 22px;position:relative;font:700 16.5px Montserrat,sans-serif;color:#fff}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";position:absolute;right:22px;top:50%;transform:translateY(-50%);font:400 24px Inter,sans-serif;color:var(--sky);transition:transform .2s}
+  .faq details[open] summary::after{transform:translateY(-50%) rotate(45deg)}
+  .faq details p{margin:0;padding:0 22px 20px;color:var(--muted);font-size:15.5px}
+  .cta .mail{margin:18px 0 0;font-size:14.5px;color:var(--muted)}
+  .cta .mail a{color:#fff}
+  @media (max-width:980px){.pains{grid-template-columns:1fr}.faq-wrap{grid-template-columns:1fr;gap:0}}
+
   /* Sobre */
   #sobre{background:linear-gradient(180deg,transparent,rgba(29,78,216,.08) 30%,rgba(29,78,216,.08) 70%,transparent)}
   .about{display:grid;grid-template-columns:.85fr 1.15fr;gap:64px;align-items:center}
@@ -266,7 +287,7 @@
     <div class="bg-fx" aria-hidden="true"><div class="grid"></div><div class="orb b"></div><div class="orb o"></div></div>
     <div class="wrap cols">
       <div>
-        <a class="pill rv" href="#produtos"><b>Novo</b> OrderFlow agora com nota fiscal e Pix automático →</a>
+        <a class="pill rv" href="#produtos"><b>Novo</b> OrderFlow com Pix automático e assistente com IA →</a>
         <h1 class="rv d1">Tecnologia para um futuro com mais <span class="grad">oportunidades.</span></h1>
         <p class="lead rv d2">A HM17 cria, desenvolve e opera produtos digitais que transformam negócios e geram oportunidades reais para pessoas.</p>
         <div class="ctas rv d3">
@@ -359,6 +380,21 @@
     </div>
   </section>
 
+  <section id="ajuda">
+    <div class="wrap">
+      <div class="head rv">
+        <div class="eyebrow">Onde a HM17 pode ajudar</div>
+        <h2>Quando o trabalho cresce, a tecnologia precisa <span class="grad">acompanhar</span></h2>
+      </div>
+      <div class="pains">
+        <div class="pain rv"><span class="n">01</span><h3>Informações espalhadas</h3><p>Quando relatórios dependem de várias planilhas e conferências manuais, o acompanhamento fica difícil. Desenvolvemos painéis e integrações que reúnem as informações e apoiam a decisão.</p></div>
+        <div class="pain rv d1"><span class="n">02</span><h3>Sistemas que não conversam</h3><p>Dados repetidos em ferramentas diferentes geram retrabalho. Analisamos o fluxo e conectamos as etapas que fazem sentido para a operação.</p></div>
+        <div class="pain rv d2"><span class="n">03</span><h3>Processos sem estrutura</h3><p>Solicitações, aprovações e acompanhamentos às vezes pedem um sistema próprio. Criamos portais e aplicações a partir do processo de quem vai usar.</p></div>
+      </div>
+      <div class="rv" style="margin-top:28px"><a class="btn btn-ghost" href="mailto:contato@hm17.com.br?subject=Quero%20conversar%20sobre%20meu%20processo">Quero conversar sobre meu processo <span aria-hidden="true">→</span></a></div>
+    </div>
+  </section>
+
   <section id="servicos">
     <div class="wrap">
       <div class="head rv">
@@ -407,10 +443,10 @@
           <ul class="w-chips"><li>Bot de vendas</li><li>Integração com seguradora</li><li>CRM e funil</li></ul>
         </article>
         <article class="work rv d1">
-          <div class="w-top"><span class="w-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M8 11h6M11 8v6"/></svg></span><span class="w-tag">Prospecção</span></div>
-          <h3>Captação de clientes por região e atividade</h3>
-          <p>Levantamento de empresas por atividade (CNAE) e região a partir de dados públicos, com priorização e campanhas de abordagem para gerar novos clientes.</p>
-          <ul class="w-chips"><li>Dados públicos de CNPJ</li><li>Segmentação por região</li><li>Campanhas de abordagem</li></ul>
+          <div class="w-top"><span class="w-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M8 11h6M11 8v6"/></svg></span><span class="w-tag">Rede Técnica Brasil</span></div>
+          <h3>Rede de profissionais técnicos para empresas</h3>
+          <p>Plataforma de captação, qualificação e encaminhamento de profissionais técnicos para empresas, com prospecção por atividade (CNAE) e região para encontrar quem precisa do serviço.</p>
+          <ul class="w-chips"><li>Captação de profissionais</li><li>Qualificação</li><li>Prospecção por região</li></ul>
         </article>
         <article class="work rv">
           <div class="w-top"><span class="w-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 18v-6a9 9 0 0118 0v6"/><path d="M21 19a2 2 0 01-2 2h-1v-6h3zM3 19a2 2 0 002 2h1v-6H3z"/></svg></span><span class="w-tag">Atendimento</span></div>
@@ -445,6 +481,22 @@
     </div>
   </section>
 
+  <section id="faq">
+    <div class="wrap faq-wrap">
+      <div class="head rv">
+        <div class="eyebrow">Perguntas frequentes</div>
+        <h2>Antes de conversar</h2>
+        <p>O que mais nos perguntam sobre a HM17 e sobre como começar.</p>
+      </div>
+      <div class="faq rv">
+        <details><summary>A HM17 atende apenas restaurantes?</summary><p>Não. O OrderFlow é voltado a restaurantes, mas a HM17 também desenvolve sistemas, automações e soluções de dados para outros tipos de negócio.</p></details>
+        <details><summary>Posso contratar um projeto sob medida?</summary><p>Sim. O trabalho começa pela compreensão do processo e da necessidade, para definir a solução e um escopo adequado.</p></details>
+        <details><summary>Preciso substituir os sistemas que já uso?</summary><p>Depende do diagnóstico. A solução pode integrar as ferramentas que você já tem, automatizar etapas ou ser uma aplicação própria.</p></details>
+        <details><summary>Como começo uma conversa?</summary><p>Mande um e-mail contando o problema que deseja resolver e como o processo funciona hoje. Respondemos em até 1 dia útil.</p></details>
+      </div>
+    </div>
+  </section>
+
   <section id="contato">
     <div class="wrap">
       <div class="cta rv">
@@ -453,7 +505,8 @@
             <div class="eyebrow">Contato</div>
             <h2>Vamos tirar sua ideia do papel?</h2>
             <p>Projetos sob encomenda, parcerias e informações institucionais. Respondemos em até 1 dia útil.</p>
-            <a class="btn btn-primary" href="mailto:contato@hm17.com.br?subject=Contato%20pelo%20site">contato@hm17.com.br <span aria-hidden="true">→</span></a>
+            <div class="ctas"><a class="btn btn-primary" href="mailto:contato@hm17.com.br?subject=Projeto%20sob%20medida">Projeto sob medida <span aria-hidden="true">→</span></a><a class="btn btn-ghost" href="https://orderflow.tec.br" target="_blank" rel="noopener">Quero o OrderFlow <span aria-hidden="true">↗</span></a></div>
+            <p class="mail">ou escreva para <a href="mailto:contato@hm17.com.br">contato@hm17.com.br</a></p>
           </div>
           <dl>
             <div><dt>Razão social</dt><dd>HM17 Desenvolvimento de Software sob Encomenda LTDA</dd></div>
